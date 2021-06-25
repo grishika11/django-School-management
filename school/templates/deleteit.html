@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {%load static%}
+	<title>Signup Page</title>
+	<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+ 
+}
+body{
+
+   background-image: url("{%static 'images/.jpg'%}");
+    background-size: cover;
+    position: relative;
+     opacity: 0.9;
+}
+
+.container{
+	 border-radius: 5px;
+  background-color: #339966;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 50px;
+  margin-left: 250px;
+  position: absolute;
+  top:  10%;
+}
+</style>
+</head>
+
+<body>
+<div class='container'>
+<p>Are you sure you want to delete ?</p><br>
+
+<a href="{% url 'career_view' %}" >Cancel</a><br>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<input type="submit" name="Confirm">
+</form>
+
+</div>
+</body>
+</html>

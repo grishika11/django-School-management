@@ -1,0 +1,80 @@
+{%extends 'navigation.html'%}
+{% load static %}
+{% block body%}
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
+</head>
+<div class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+  </div>
+  <div class="row">
+    <div class="column">
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.5378611448245!2d77.31302231424728!3d28.583636982437113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce545e8e3d255%3A0x56e07cf92b8dca7b!2sVMCODER%20TECHNOLOGY!5e0!3m2!1sen!2sin!4v1616387720051!5m2!1sen!2sin" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+   </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+		<option value="India">India</option>
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32" style = "background-color: #2d8659">
+    <div class="w3-third">
+      <h3>LOCATION</h3>
+      <p>5th Km. Haridwar-Roorkee Canal Road,
+Near village Bajuhari, Roorkee, Distt.-Haridwar,
+Uttarakhand-247667, INDIA</p>
+    
+    </div>
+  
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="{%static 'images/lib.jpg'%}"class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="{%static 'images/lib.jpg'%}"class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <ul>
+  <li><a class="active" href="{%url 'home'%}">HOME</a></li>
+  <li><a href="{%url 'gallery'%}">GALLERY</a></li>
+  <li><a href="{%url 'contact'%}">CONTACT</a></li>
+  <li><a href="{%url 'about'%}">ABOUT</a></li>
+  <li><a href="{%url 'admin_login' %}">ADMIN LOGIN</a></li>
+</ul>    </div>
+  </footer>
+
+<!-- End page content -->
+</div>
+
+{% endblock%}

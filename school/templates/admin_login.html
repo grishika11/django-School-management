@@ -1,0 +1,42 @@
+{%extends 'navigation.html' %}
+{% load static %}
+{% block body%}
+   {% ifequal error "no" %}
+<script>
+  alert('Logged In Successfully');
+  window.location=('(%url 'neww'%)')
+</script>   
+{% endifequal %} 
+
+{% ifequal error "yes" %}
+<script>
+  alert('Invalid Login Credentials , Try Again');
+
+</script>
+{%  endifequal %}
+
+<div class="container  mt-5">
+<div class="row">
+  <div class="col-sm-5">
+    <img src="{%static 'images/child.jpg' %}"  style="width:100%; height: 356px;">
+  </div>
+  <div class="col-sm-6">
+    <h2 class="text-center">ADMIN LOGIN</h2>
+    <p>Enter your username and password</p>
+    <HR>
+<form method="POST">
+{% csrf_token %} 
+  <label><b>AdminName</b></label>
+  <input type = text name="uname" class="form-control" placeholder="Enter username" >
+  <label><b>Password</b></label>
+  <input type="password" name="pwd" class="form-control" placeholder="Enter password">
+  <br>
+  <input type= submit value="Login" class="btn btn-primary mt-2">
+</form>
+</HR>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

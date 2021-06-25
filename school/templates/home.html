@@ -1,0 +1,233 @@
+{%extends 'navigation.html'%}
+{% load static %}
+{% block body%}
+
+<head>
+<style>
+.mySlides {display:none;}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Clearfix (clear floats) */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+
+.img{
+
+  border-radius: 50%;
+}
+
+
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+/* our team style*/
+</style>
+</head>
+
+<body>
+
+
+<div style="width: 100%; height: 50%;">
+  <img class="mySlides" src="{%static 'images/child.jpg'%}" style="width:100%">
+  <img class="mySlides" src="{%static 'images/student.jpg'%}"style="width:100%">
+  <img class="mySlides" src="{%static 'images/photo.jpg'%}"style="width:100%">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 5000); // Change image every 2 seconds
+}
+</script>
+<center>
+<div style="width: 80%">
+   
+  
+     <h2>Our Mission</h2>
+        <p>our mission is to develop young individuals who are active and creative, empathetic & compassionate, courageous but composed and passionate to society. We believe the veil of ignorance should be raised by expansion of knowledge, exploration of capabilities and harnessing of energy.</p>
+
+        <p>g minds are impressionable -What they learn, they follow the same. If good values are imbibed at the right time, then a child becomes spiritually, morally and intellectually blessed. They not only become treasures of society but they create a hope for Utopia.</p>
+        <h4><b>By the next three years, the school will help students become entrepreneurs to that they become part of skilled India and lead India independently.</b></h4></div>     
+
+</div>
+</center>
+<br>
+<div style="margin-left: 10%; margin-right: 10%;">
+<div class="row">
+  <div class="column">
+  <img src="{%static 'images/istock.jpg'%}"   alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{%static 'images/yale.jpg'%}"   alt="Forest" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{%static 'images/child.jpg'%}"   alt="Mountains" style="width:100% ">
+  </div>
+</div>
+</div>
+
+<br>
+
+
+ <center>
+<h2 style="background-color: #2d8659">THE SCHOOL</h2>
+
+<div  style="width:80%">
+
+    <div>
+             <p>XYZ Public School provides an opportunity for an all-round education. It has the security of rich tradition under the aegis of the Trust and an ethos conducive to developing each child's potential to the fullest</p><br>
+        
+          
+
+</div>
+</div>
+<br>
+ <center>
+   <h2 style="background-color: #2d8659">THE VISION</h2>
+<div style="width: 80%">
+  
+        <p>The school maintains a sharp focus on the pursuit of knowledge and skill, in particular, to the attainment of the highest academic standards. The school aims at broader development of the complete personality of its students by creating:</p>
+ </center>
+        <ul>
+          <li>An understanding and appreciation of India's rich culture</li>
+          <li>An awareness of the environment</li>
+          <li>A sense of integrity, ethics and honesty</li>
+          <li>A concern for the less fortunate</li>
+          <li>A strong secular ethos</li>
+          <li>A concern for human rights and democratic leadership, with a sense of teamwork and fair play values</li>
+          <li>A questioning mind and a spirit of adventure</li>
+        </ul>
+
+
+</div><br>
+
+<center>
+  <div class = "a">
+  <h2 style="background-color: #2d8659"><b>  OUR TEAM <b></h2>
+</center>
+</div>
+<br>
+<div style="margin-left: 10%; margin-right: 10%; ">
+<div class="row">
+ <div class="column">
+    <div class="polaroid">
+  <img src="{%static 'images/lib.jpg'%}"alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Northern Lights</p>
+  </div>
+  </div>
+</div>
+
+  <div class="column">
+    <div class="polaroid">
+  <img src="{%static 'images/lib.jpg'%}"alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Northern Lights</p>
+  </div>
+  </div>
+</div>
+
+  <div class="column">
+   <div class="polaroid">
+  <img src="{%static 'images/lib.jpg'%}"alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Northern Lights</p>
+  </div>
+</div></div>  
+<div class="column">
+    <div class="polaroid">
+  <img src="{%static 'images/lib.jpg'%}"alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Northern Lights</p>
+  </div>
+  </div>
+</div>
+
+<div class="column">
+    <div class="polaroid">
+  <img src="{%static 'images/lib.jpg'%}"alt="Norther Lights" style="width:100%">
+  <div class="container">
+  <p>Northern Lights</p>
+  </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<br>
+
+<!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32" style = "background-color: #2d8659 ">
+    <div class="w3-third" style="text-align: left;">
+      <h3>ADDRESS</h3>
+      <p>5th Km. Haridwar-Roorkee Canal Road,
+Near village Bajuhari, Roorkee, Distt.-Haridwar,
+Uttarakhand-247667, INDIA</p>
+    
+    </div>
+  
+    <div class="w3-third" style="text-align: left;">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="{%static 'images/lib.jpg'%}"class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="{%static 'images/lib.jpg'%}"class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-third w3-serif" style="text-align: left;">
+      <h3>POPULAR TAGS</h3>
+      <ul>
+  <li><a class="active" href="{%url 'home'%}">HOME</a></li>
+  <li><a href="{%url 'gallery'%}">GALLERY</a></li>
+  <li><a href="{%url 'contact'%}">CONTACT</a></li>
+  <li><a href="{%url 'about'%}">ABOUT</a></li>
+  <li><a href="{%url 'admin_login' %}">ADMIN LOGIN</a></li>
+</ul>    </div>
+  </footer>
+
+<!-- End page content -->
+</div>
+</body>
+
+
+{% endblock%}

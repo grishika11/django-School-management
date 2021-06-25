@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  {%load static%}
+  <style>
+    
+    .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.table{
+  border-radius: 5px;
+  background-color: #339966;
+  position: absolute;
+  
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 20px;
+  padding-bottom: 10px;
+
+}
+  </style>
+</head>
+<h1>Teachers Detail</h1>
+<a href="{% url 'export-csv' %}" class="btn btn-secondary">Export CSV</a>
+<a href="{% url 'export-excel' %}" class="btn btn-secondary">Export excel</a>
+
+<div class="table">
+	{% if stu %}
+	<table id="example" class="table table-hover">
+  <thead >
+     <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Qualification</th>
+      <th>Experience</th>
+      <th>City</th>
+      <th>Resume</th>
+      <th >Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for st in stu %}
+    <tr>
+
+      <th>{{st.id}}</th>
+      <td>{{st.name}}</td>
+      <td>{{st.email}}</td>
+      <td>{{st.qly}}</td>
+      <td>{{st.exp}}</td>
+      <td>{{st.city}}</td>
+      <td><a href="#">{{st.filepath}}</a></td>
+      <!-- <td><form action="{% url 'deleteit' st.id %}" method="POST" class="d-inline" onsubmit="Are you sure,you want to remove"> -->
+          {% csrf_token %}
+          <td><a class="btn btn-sm btn-danger" href="{% url 'deleteit' st.id %}">Delete</a>
+          
+        </form>
+      </td>
+      
+    </tr>
+   {% endfor %} 
+  </tbody>
+</table>
+
+	{% else %}
+	<h4 class="text-center alert alert-warning">No Records</h4>
+	{% endif %}
+</div>
+
+
+</html>

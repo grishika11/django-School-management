@@ -1,0 +1,107 @@
+{%extends 'navigation.html'%}
+{% load static %}
+{% block body%}
+<head>
+<style>
+img {
+  max-width: 500%;
+  height: auto;
+
+}
+</style>
+</head>
+<body>
+<img src="{%static 'images/lib.jpg'%}"  alt="about" width="1300" height="100"><br>
+<br>
+<center>
+<div style="width: 80%">
+  
+  <h1><b>OVERVIEW</b></h1>
+
+  <p>In the year 1972, the vision of a forerunner educationist Mr. J. K. Gaur manifested itself in the form of an ISO certified school, which spreads over 10,000 sqm of serene ambience, providing learning & stimulating environment. And ever since then, the school has set a new standard in shaping young minds. We, at JKG aim to provide a broad learning experience and encourage a rich variety of approaches to teaching and learning that cater for the different needs of individual children through CBSE recommended curriculum. Our commitment towards excellence in education is reflective in our vision i.e. Darkness to Light. To build a structure with mere concrete, a brick is easier than building a society where all the beings are aware of their social responsibilities. And this is one of the most important thing for every school because our foremost duty is to make responsible citizen. JKGIS expedition is to contribute to do what we have always done: develop this school and the students with integrity and the values; also, to give our students the best opportunities and the best all-round education. Our vision is to nurture conscientious, smart and confident citizens of India who will go out into the world and make us proud! We want that when our students step out in the world of competition they should shine bright so much so that even the darkest of darkness cannot hide their beauty. Education is not mere books and marks it is way beyond these things. One can only succeed in life when he/she has control and command over their field. This extra ordinary command and hold can be obtained by experience and nothing else. So, our aim is to make education a process which involves experience, exploration and enjoyment, so that concepts can penetrate inside the brain and can never be forgotten. In our institution learners are not only free to explore new things they are even allowed to experience and enjoy while learning.</p>
+  
+</div>
+</center>
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Jane Doe</h2>
+        <p class="title">CEO & Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>jane@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Mike Ross</h2>
+        <p class="title">Art Director</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>mike@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/w3images/team3.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>John Doe</h2>
+        <p class="title">Designer</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>john@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32" style = "background-color: #2d8659">
+    <div class="w3-third">
+      <h3>LOCATION</h3>
+      <p>5th Km. Haridwar-Roorkee Canal Road,
+Near village Bajuhari, Roorkee, Distt.-Haridwar,
+Uttarakhand-247667, INDIA</p>
+    
+    </div>
+  
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="{%static 'images/lib.jpg'%}"class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="{%static 'images/lib.jpg'%}"class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <ul>
+  <li><a class="active" href="{%url 'home'%}">HOME</a></li>
+  <li><a href="{%url 'gallery'%}">GALLERY</a></li>
+  <li><a href="{%url 'contact'%}">CONTACT</a></li>
+  <li><a href="{%url 'about'%}">ABOUT</a></li>
+  <li><a href="{%url 'admin_login' %}">ADMIN LOGIN</a></li>
+</ul>    </div>
+  </footer>
+
+<!-- End page content -->
+</div>
+{% endblock%}

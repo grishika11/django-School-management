@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %} 
+  <title>school_management</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{%static 'css/cnt.css'%}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
+
+
+<!---datatable cdn start--->
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.0/css buttons.dataTables.min.css">
+
+<!---datatable cdn start---->
+
+<script >
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+} );
+
+</script>
+
+<!---datatable cdn end--->
+
+
+<style>
+  body {
+              background-color: #ffffff;
+          
+        }
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #2d8659 ;
+  padding: 20px;
+
+}
+
+/* Style the navigation bar */
+
+body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {bckground-color: #111;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="header">
+    <img src="{%static 'images/unnamed.png'%}"   alt="Snow" style="width:100px; height: 100px;">
+    <h1 style="text-align: center; margin-top: -60px;"><b>XYZ PUBLIC SCHOOL, GHAZIABAD</b></h1>
+</div>
+
+  <ul class="topnav">
+    {% if not request.user.is_staff %}
+  <li><a href="{%url 'home'%}">HOME</a></li>
+  <li><a href="{%url 'about'%}">ABOUT</a></li>
+  <li><a href="{%url 'contact'%}">CONTACT</a></li>
+  <li><a href="{%url 'gallery'%}">GALLERY</a></li>
+  <li><a href="{%url 'admission'%}">ADMISSION</a></li>
+  <li><a href="{%url 'career'%}">CAREER</a></li>
+  <li style="float:right"><a href="{%url 'admin_login'%}">ADMIN LOGIN</a></li>
+
+
+{% endif %}   
+{% if request.user.is_staff %}
+
+  <li style="float:right"><a href="{%url 'logout'%}">LOGOUT</a></li>
+  <li style="float:right"><a href="{%url 'upload'%}">ADD GALLERY</a></li>
+  <li style="float:right"><a href="{%url 'student_view'%}">ADMISSION</a></li>
+  <li style="float:right"><a href="{%url 'career_view'%}">CAREER</a></li>
+{% endif %}
+</ul>
+
+</body>
+</html>
+{%block body%}
+
+{% endblock %}

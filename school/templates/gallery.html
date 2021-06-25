@@ -1,0 +1,92 @@
+{% extends 'navigation.html'%}
+{% block body %}
+{% load static %}
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+ <div class="row">
+      {% for x in img %}
+
+      <div class="col-sm-4">
+        <div class="card m-2">
+          <img src="{{x.photo.url}}" alt="" class="card-img-top" height="200px">
+          <div class ="card-footer">
+          <small class="text-muted">{{x.name}}</small>        
+        </div>
+      </div>
+    </div>
+
+
+    {% endfor %}
+</div>
+
+
+
+<!------------ Footer --------------------------->
+
+  <footer class="w3-row-padding w3-padding-32" style = "background-color: #2d8659">
+    <div class="w3-third">
+      <h3>LOCATION</h3>
+      <p>5th Km. Haridwar-Roorkee Canal Road,
+Near village Bajuhari, Roorkee, Distt.-Haridwar,
+Uttarakhand-247667, INDIA</p>
+    
+    </div>
+  
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="{%static 'images/lib.jpg'%}"class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="{%static 'images/lib.jpg'%}"class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <ul>
+  <li><a class="active" href="{%url 'home'%}">HOME</a></li>
+  <li><a href="{%url 'gallery'%}">GALLERY</a></li>
+  <li><a href="{%url 'contact'%}">CONTACT</a></li>
+  <li><a href="{%url 'about'%}">ABOUT</a></li>
+  <li><a href="{%url 'admin_login' %}">ADMIN LOGIN</a></li>
+</ul>    </div>
+  </footer>
+
+<!-- End page content -->
+</div>
+</div>
+</body>
+  {%endblock%}

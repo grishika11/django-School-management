@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  {%load static%}
+  <style>
+    
+    .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.table{
+  border-radius: 5px;
+  background-color: #339966;
+  position: absolute;
+ 
+
+  
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 20px;
+  padding-bottom: 10px;
+
+}
+  </style>
+</head>
+<h1>Student Detail</h1>
+
+<section class ="tab">
+<div class="table">
+	{% if stu %}
+	<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Class</th>
+      <th scope="col">City</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for st in stu %}
+    <tr>
+      <th scope="row">{{st.id}}</th>
+      <td>{{st.name}}</td>
+      <td>{{st.email}}</td>
+       <td>{{st.clas}}</td>
+       <td>{{st.city}}</td>
+       <td><form action="{% url 'deletedata1' st.id %}" method="POST" class="d-inline">
+          {% csrf_token %}
+          <input type="submit" class="btn btn-danger" value="Delete">
+          
+        </form>
+      </td>
+      
+      
+    </tr>
+   {% endfor %} 
+  </tbody>
+</table>
+
+	{% else %}
+	<h4 class="text-center alert alert-warning">No Records</h4>
+	{% endif %}
+</div>
+
+</section>
+</html>

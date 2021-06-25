@@ -1,0 +1,50 @@
+{%extends 'home.html'%}
+{%block body%}
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   
+
+    <title>upload_image</title>
+  </head>
+  <body>
+<center>  <h1>ADD IMAGE HERE</h1></center> 
+  <div class="container">
+    <div class="py-5 text-center bg-warning text-white">
+      <h3 class="mb-3">Upload Image</h3>
+      <form action ="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{form}}
+            <input type="submit" class="btn btn-danger" value="Upload">
+        </form>
+    </div>
+    <div class="row">
+      {% for x in img %}
+
+      <div class="col-sm-4">
+        <div class="card m-2">
+          <img src="{{x.photo.url}}" alt="" class="card-img-top" height="200px">
+          <div class ="card-footer">
+          <small class="text-muted">{{x.name}}</small>
+          <a href="{% url 'deletedata2' x.id %}" class = "btn btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+  
+
+      {% endfor %}
+</div>
+
+   
+    
+
+  </body>
+</html>
+
+{% endblock %}
